@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hikari Anime Myanmar – Watch Anime Anywhere</title>
-  <meta name="description" content="Hikari Anime Myanmar အတွက် Anime movies, series, watch list, downloads နဲ့ profile control တွေပါဝင်တဲ့ mobile-first app landing page.">
-  <meta property="og:title" content="Hikari Anime Myanmar">
-  <meta property="og:description" content="Discover anime movies and series in one beautiful dark UI.">
+  <title>Hikari Anime Myanmar – Myanmar’s Anime Home</title>
+  <meta name="description" content="Hikari Anime Myanmar - Trending anime movies & series, premium dark UI, watch list, downloads and smooth profile experience.">
+  <meta property="og:title" content="Hikari Anime Myanmar – Myanmar’s Anime Home">
+  <meta property="og:description" content="Stream anime with cinematic quality, smart discovery and offline downloads.">
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,14 +14,14 @@
 
   <style>
     :root {
-      --bg: #040712;
-      --bg-soft: #0d1224;
-      --card: #101628;
-      --line: #2a3148;
-      --text: #f5f7ff;
-      --muted: #a1abc4;
-      --accent: #ff4545;
-      --accent-soft: #ff2e2e22;
+      --bg: #040612;
+      --bg-soft: #0b1122;
+      --card: #10172a;
+      --line: #27304a;
+      --text: #f6f7ff;
+      --muted: #9ea8c4;
+      --accent: #ff4747;
+      --accent-2: #ff2b2b;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -29,27 +29,26 @@
     body {
       font-family: 'Inter', sans-serif;
       color: var(--text);
-      background:
-        radial-gradient(1000px 500px at 15% -10%, #ab2a2a22 0%, transparent 55%),
-        radial-gradient(700px 400px at 90% 20%, #2844ff14 0%, transparent 50%),
-        var(--bg);
       min-height: 100vh;
-      line-height: 1.55;
+      background:
+        radial-gradient(900px 400px at 10% -10%, #ff3e3e24 0%, transparent 60%),
+        radial-gradient(700px 350px at 95% 15%, #3d5cff1f 0%, transparent 55%),
+        var(--bg);
+      line-height: 1.6;
     }
 
     .container {
-      width: min(1120px, 92vw);
+      width: min(1180px, 93vw);
       margin: 0 auto;
     }
 
     header {
-      padding: 1.2rem 0;
-      border-bottom: 1px solid #ffffff1a;
       position: sticky;
       top: 0;
+      z-index: 30;
+      border-bottom: 1px solid #ffffff1b;
+      background: #040612d6;
       backdrop-filter: blur(8px);
-      background: #040712d6;
-      z-index: 20;
     }
 
     .header-wrap {
@@ -57,181 +56,192 @@
       align-items: center;
       justify-content: space-between;
       gap: 1rem;
+      padding: 1rem 0;
     }
 
     .logo {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
       background: var(--accent);
       color: #000;
-      font-size: 1.1rem;
       font-weight: 800;
-      letter-spacing: 0.35rem;
-      padding: 0.45rem 0.8rem;
+      letter-spacing: .34rem;
+      font-size: 1.05rem;
+      padding: .45rem .8rem;
       border-radius: 2px;
       text-decoration: none;
     }
 
-    nav { display: flex; gap: 0.7rem; flex-wrap: wrap; }
-
-    .pill {
+    nav { display: flex; gap: .6rem; flex-wrap: wrap; }
+    .nav-pill {
       text-decoration: none;
       color: var(--muted);
       border: 1px solid var(--line);
       border-radius: 999px;
-      padding: 0.5rem 0.9rem;
-      font-size: 0.9rem;
-      transition: 0.2s ease;
+      padding: .46rem .86rem;
+      font-size: .88rem;
+      transition: .2s;
+    }
+    .nav-pill:hover { color: var(--text); border-color: #4a5b88; }
+
+    .hero {
+      padding: 4.2rem 0 2.6rem;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 1.5rem;
+      align-items: center;
     }
     .pill:hover { color: var(--text); border-color: #4e5d86; }
 
-    .hero {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 2rem;
-      padding: 4.5rem 0 3.5rem;
-      align-items: center;
-    }
-
     h1 {
-      font-size: clamp(2rem, 6vw, 3.4rem);
-      line-height: 1.14;
+      font-size: clamp(2rem, 6vw, 3.6rem);
+      line-height: 1.16;
       margin-bottom: 1rem;
     }
 
     .lead {
       color: var(--muted);
-      font-size: clamp(1rem, 2vw, 1.15rem);
-      max-width: 62ch;
-      margin-bottom: 1.7rem;
+      max-width: 65ch;
+      margin-bottom: 1.35rem;
+      font-size: clamp(1rem, 2vw, 1.13rem);
     }
 
-    .actions { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+    .actions { display: flex; gap: .7rem; flex-wrap: wrap; }
 
     .btn {
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: 600;
+      padding: .85rem 1.1rem;
+      border: 1px solid transparent;
+      transition: .2s;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 0.88rem 1.15rem;
-      border-radius: 12px;
-      border: 1px solid transparent;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.2s ease;
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, #ff5151, #cd2020);
-      color: white;
-      box-shadow: 0 10px 26px #ff414138;
+      color: #fff;
+      background: linear-gradient(135deg, #ff5454, #c81e1e);
+      box-shadow: 0 10px 24px #ff3f3f3b;
     }
 
     .btn-secondary {
-      border-color: var(--line);
       color: var(--text);
-      background: #0f1528;
+      border-color: var(--line);
+      background: #0e1528;
     }
-
     .btn:hover { transform: translateY(-2px); }
 
-    .phone {
-      border: 1px solid #ffffff20;
-      background: linear-gradient(180deg, #0f1427, #0a0f1d);
-      border-radius: 30px;
-      padding: 0.8rem;
-      box-shadow: 0 24px 70px #00000066;
+    .stat-box {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, #0f162a, #0b1122);
+      border-radius: 18px;
+      padding: 1rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .5rem;
     }
 
-    .phone video {
-      display: block;
-      width: 100%;
-      border-radius: 22px;
-      border: 1px solid #ffffff1c;
-    }
+    .stat h3 { font-size: 1.25rem; }
+    .stat p { color: var(--muted); font-size: .85rem; }
 
-    section { padding: 1rem 0 2.8rem; }
+    section { padding: 1rem 0 2.4rem; }
 
     .section-title {
       font-size: clamp(1.35rem, 3vw, 2rem);
-      margin-bottom: 1rem;
+      margin-bottom: .6rem;
     }
+    .section-sub { color: var(--muted); margin-bottom: 1.1rem; }
 
-    .section-sub {
-      color: var(--muted);
-      margin-bottom: 1.2rem;
-    }
-
-    .feature-grid {
+    .screens-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 0.9rem;
+      gap: .95rem;
     }
 
-    .feature {
+    .screen {
       border: 1px solid var(--line);
-      background: linear-gradient(180deg, #11182d, #0a0f1e);
-      border-radius: 16px;
-      padding: 1rem;
+      background: linear-gradient(180deg, #10182d, #0a1021);
+      border-radius: 18px;
+      padding: .7rem;
     }
 
-    .feature h3 {
-      display: flex;
+    .screen img {
+      width: 100%;
+      aspect-ratio: 9 / 19.5;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 1px solid #ffffff1f;
+      background: #0a1020;
+      display: block;
+    }
+
+    .img-fallback {
+      width: 100%;
+      aspect-ratio: 9 / 19.5;
+      border-radius: 14px;
+      border: 1px dashed #445279;
+      color: #7f8bad;
+      background: linear-gradient(180deg, #11182d, #0b1222);
+      display: none;
       align-items: center;
-      gap: 0.5rem;
-      font-size: 1.06rem;
-      margin-bottom: 0.35rem;
+      justify-content: center;
+      text-align: center;
+      padding: 1rem;
+      font-size: .9rem;
     }
 
-    .feature p { color: var(--muted); font-size: 0.95rem; }
-
-    .tags {
-      margin-top: 0.7rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
+    .screen h3 {
+      margin-top: .7rem;
+      font-size: 1rem;
+    }
+    .screen p {
+      color: var(--muted);
+      font-size: .92rem;
+      margin-top: .25rem;
     }
 
-    .tag {
-      background: var(--accent-soft);
-      border: 1px solid #ff4f4f55;
-      color: #ff8f8f;
-      padding: 0.17rem 0.55rem;
-      border-radius: 999px;
-      font-size: 0.75rem;
-    }
-
-    .final-cta {
-      border: 1px solid #ff4d4d52;
+    .promo {
+      border: 1px solid #ff525258;
+      background: linear-gradient(145deg, #ff3d3d16, #0f1629);
       border-radius: 20px;
-      background: linear-gradient(135deg, #ff4d4d16, #11182b);
-      padding: 1.2rem;
+      padding: 1.15rem;
+      margin-bottom: 2.6rem;
+    }
+
+    .promo h2 { margin-bottom: .6rem; }
+    .promo-list { margin-top: .7rem; color: var(--muted); padding-left: 1.2rem; }
+    .promo-list li { margin-bottom: .35rem; }
+
+    .download {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, #0f162a, #0b1121);
+      border-radius: 18px;
+      padding: 1.15rem;
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
+      flex-wrap: wrap;
       gap: 1rem;
       margin-bottom: 3rem;
     }
 
-    .final-cta p { color: var(--muted); }
-
     footer {
       border-top: 1px solid #ffffff1a;
-      padding: 1.2rem 0 1.8rem;
-      color: #8d97b3;
-      font-size: 0.9rem;
       text-align: center;
+      color: #8f99b7;
+      padding: 1.2rem 0 1.7rem;
+      font-size: .9rem;
     }
 
-    @media (max-width: 920px) {
+    @media (max-width: 980px) {
       .hero { grid-template-columns: 1fr; }
-      .feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .screens-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
-    @media (max-width: 620px) {
-      .feature-grid { grid-template-columns: 1fr; }
+    @media (max-width: 650px) {
       nav { display: none; }
+      .screens-grid { grid-template-columns: 1fr; }
+      .stat-box { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -240,72 +250,88 @@
     <div class="container header-wrap">
       <a class="logo" href="#">HIKARI</a>
       <nav>
-        <a class="pill" href="#features">Features</a>
-        <a class="pill" href="#screens">Screens</a>
-        <a class="pill" href="#download">Download</a>
+        <a class="nav-pill" href="#screenshots">Screenshots</a>
+        <a class="nav-pill" href="#promotion">Promotion</a>
+        <a class="nav-pill" href="#download">Download</a>
       </nav>
     </div>
   </header>
 
   <main class="container">
-    <section class="hero" id="screens">
+    <section class="hero">
       <div>
-        <h1>Hikari Anime Myanmar<br>Mobile Experience</h1>
-        <p class="lead">မင်းပို့ပေးထားတဲ့ screenshot style ကိုအခြေခံပြီး dark + red accent နဲ့ anime app vibe ပါတဲ့ landing page အဖြစ်ပြောင်းထားပါတယ်။ Movies, Series, Watch List, Downloads နဲ့ Profile flow တွေကို တစ်နေရာတည်းမှာပြထားပါတယ်။</p>
+        <h1>Hikari Anime Myanmar<br>Market Ready Landing Page</h1>
+        <p class="lead">Video loop မသုံးတော့ဘဲ မင်းပေးထားတဲ့ app screenshot ၆ ခုကို landing page ထဲမှာ ပြသဖို့ structure ပြင်ထားပါတယ်။ ဒီ version က marketing ဆင်းချင်တဲ့အတွက် conversion-friendly promotional copy နဲ့ CTA flow ကို အဓိကထားတည်ဆောက်ထားပါတယ်။</p>
         <div class="actions">
-          <a class="btn btn-primary" href="#download">Watch Now</a>
-          <a class="btn btn-secondary" href="#features">Explore UI Sections</a>
+          <a class="btn btn-primary" href="#download">Start Campaign</a>
+          <a class="btn btn-secondary" href="#screenshots">View 6 Screens</a>
         </div>
       </div>
-      <div class="phone">
-        <video autoplay loop muted playsinline>
-          <source src="assets/expensif_demo_dark.webm" type="video/webm">
-          <source src="assets/expensif_demo_dark.mp4" type="video/mp4">
-        </video>
+      <div class="stat-box">
+        <div class="stat"><h3>6 UI Screens</h3><p>App flow ကို တစ်ချက်ကြည့်ပြီးနားလည်နိုင်</p></div>
+        <div class="stat"><h3>Dark + Red</h3><p>Anime audience ကိုဆွဲဆောင်တဲ့ cinematic style</p></div>
+        <div class="stat"><h3>Promo Ready</h3><p>Ads, posts, campaigns အတွက် text tuned</p></div>
       </div>
     </section>
 
-    <section id="features">
-      <h2 class="section-title">Inspired by Your App Screens</h2>
-      <p class="section-sub">Main screen patterns from your references are mapped into these key landing highlights.</p>
-      <div class="feature-grid">
-        <article class="feature">
-          <h3>🎬 Search & Discover</h3>
-          <p>Genre filters, search bar, and anime list layout similar to your Search tab screenshot.</p>
-          <div class="tags"><span class="tag">All</span><span class="tag">Movies</span><span class="tag">Series</span></div>
+    <section id="screenshots">
+      <h2 class="section-title">App Screenshots (6)</h2>
+      <p class="section-sub">မင်းပေးထားတဲ့ screen flow: Detail, Search, Watch List, Profile, Downloads + another featured view.</p>
+      <div class="screens-grid">
+        <article class="screen">
+          <img src="assets/screenshots/hikari-01.svg" alt="Hikari featured detail screen" loading="lazy">
+          <div class="img-fallback">Screenshot 01<br>assets/screenshots/hikari-01.svg</div>
+          <h3>Featured Detail Screen</h3>
+          <p>Trailer, rating, genre, watch-now CTA တွေကို hero level impact နဲ့ပြထားပါတယ်။</p>
         </article>
-        <article class="feature">
-          <h3>🔥 Featured Detail</h3>
-          <p>Poster-focused detail page with trailer/watch call-to-actions and rating metadata.</p>
-          <div class="tags"><span class="tag">Trailer</span><span class="tag">Watch Now</span></div>
+        <article class="screen">
+          <img src="assets/screenshots/hikari-02.svg" alt="Hikari search and discover screen" loading="lazy">
+          <div class="img-fallback">Screenshot 02<br>assets/screenshots/hikari-02.svg</div>
+          <h3>Search & Discover</h3>
+          <p>All / Movies / Series filter flow နဲ့ genre based discovery တစ်နေရာတည်းမှာ။</p>
         </article>
-        <article class="feature">
-          <h3>📌 Watch List</h3>
-          <p>Minimal watch list state with empty-state message in the same dark visual tone.</p>
-          <div class="tags"><span class="tag">No Data Found</span></div>
+        <article class="screen">
+          <img src="assets/screenshots/hikari-03.svg" alt="Hikari watch list empty state" loading="lazy">
+          <div class="img-fallback">Screenshot 03<br>assets/screenshots/hikari-03.svg</div>
+          <h3>Watch List Experience</h3>
+          <p>Minimal no-data state design က product quality perception ကိုတိုးပေးပါတယ်။</p>
         </article>
-        <article class="feature">
-          <h3>👤 Profile Control</h3>
-          <p>Subscription, notification toggle, privacy, language and logout actions.</p>
-          <div class="tags"><span class="tag">PRO</span><span class="tag">Settings</span></div>
+        <article class="screen">
+          <img src="assets/screenshots/hikari-04.svg" alt="Hikari profile settings screen" loading="lazy">
+          <div class="img-fallback">Screenshot 04<br>assets/screenshots/hikari-04.svg</div>
+          <h3>Profile & Account Controls</h3>
+          <p>Notifications, language, privacy, terms, PRO upsell flow ကို clean UI နဲ့တည်ဆောက်ထားပါတယ်။</p>
         </article>
-        <article class="feature">
-          <h3>⬇️ Download Section</h3>
-          <p>Downloads page design with clean empty-state presentation for saved content.</p>
-          <div class="tags"><span class="tag">Offline</span><span class="tag">Fast Access</span></div>
+        <article class="screen">
+          <img src="assets/screenshots/hikari-05.svg" alt="Hikari downloads screen" loading="lazy">
+          <div class="img-fallback">Screenshot 05<br>assets/screenshots/hikari-05.svg</div>
+          <h3>Downloads Section</h3>
+          <p>Offline-ready experience ကို trust-building empty-state style နဲ့ reinforce လုပ်ထားပါတယ်။</p>
         </article>
-        <article class="feature">
-          <h3>🌙 Premium Dark Theme</h3>
-          <p>Deep navy background + red action accents to preserve anime cinema mood.</p>
-          <div class="tags"><span class="tag">Dark UI</span><span class="tag">Red Accent</span></div>
+        <article class="screen">
+          <img src="assets/screenshots/hikari-06.svg" alt="Hikari additional app screen" loading="lazy">
+          <div class="img-fallback">Screenshot 06<br>assets/screenshots/hikari-06.svg</div>
+          <h3>Complete App Journey</h3>
+          <p>Home to profile အထိ user journey ကို screenshots တစ်စီးရီးနဲ့ marketing story အဖြစ်ပြနိုင်ပါတယ်။</p>
         </article>
       </div>
     </section>
 
-    <section class="final-cta" id="download">
+    <section class="promo" id="promotion">
+      <h2 class="section-title">Promotional Text (Market Launch Ready)</h2>
+      <p class="section-sub">ဒီ copy ကို ads, Facebook posts, Telegram promo, app-store description တွေမှာ တိုက်ရိုက်အသုံးပြုလို့ရပါတယ်။</p>
+      <ul class="promo-list">
+        <li><strong>“Anime fans အတွက် Myanmar မှာအလိုက်ဖက်ဆုံး premium dark experience.”</strong></li>
+        <li><strong>“Trending Movies + Series + Smart Search — One app, one vibe, zero clutter.”</strong></li>
+        <li><strong>“Watch List နဲ့ Downloads ပါလို့ ကြိုက်နှစ်သက်တဲ့ anime ကို စနစ်တကျစုနိုင်တယ်.”</strong></li>
+        <li><strong>“Fast, stylish, cinematic — Hikari Anime Myanmar နဲ့ next-level viewing experience.”</strong></li>
+      </ul>
+    </section>
+
+    <section class="download" id="download">
       <div>
-        <h3>Ready to launch Hikari Anime Myanmar?</h3>
-        <p>Landing page ကို production-ready copy, app links, နောက်ထပ် screenshots တွေနဲ့ ဆက်ပြီး customize လုပ်လို့ရပါတယ်။</p>
+        <h3>Launch with confidence 🚀</h3>
+        <p class="section-sub" style="margin:0;">Store links ထည့်ပြီး campaign စနိုင်ပါတယ်။ Screenshot files ကို `assets/screenshots/` ထဲထည့်တာနဲ့ဒီ section မှာတန်းပြမယ်။</p>
       </div>
       <div class="actions">
         <a class="btn btn-primary" href="#">Download for iOS</a>
@@ -315,7 +341,19 @@
   </main>
 
   <footer>
-    © 2026 Hikari Anime Myanmar · Crafted for your anime community.
+    © 2026 Hikari Anime Myanmar · Built for anime lovers in Myanmar.
   </footer>
+
+  <script>
+    document.querySelectorAll('.screen img').forEach((img) => {
+      img.addEventListener('error', () => {
+        img.style.display = 'none';
+        const fallback = img.nextElementSibling;
+        if (fallback && fallback.classList.contains('img-fallback')) {
+          fallback.style.display = 'flex';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
